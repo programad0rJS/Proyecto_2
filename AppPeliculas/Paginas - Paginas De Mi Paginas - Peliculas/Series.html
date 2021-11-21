@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Series</title>
+
+    <link rel="stylesheet" href="../css/AppDePeliculas.css">
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- fontawesome Terminaste -->
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="https://img.repelis.id/cover/dragon-ball-super-broly.jpg" type="image/x-icon">
+    <!-- Ya Terminaste El Favicon -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- Nav    -->
+    <nav class="Navbar">
+        <a href="../Paginas/AppDeInformacion.html" accesskey="X"> </a>
+
+        <h1 class="Titulos">
+            <a href="../html/AppDePeliculas.html" class="Enlaces">Programador Josue</a>
+        </h1>
+        <!-- Buscador  -->
+        <div class="Buscar">
+            <input type="search" placeholder="Buscador De Series" id="Formulario" required>
+
+            <div class="btn">
+                <i class="fas fa-search icon"></i>
+
+            </div>
+
+        </div>
+        <!-- <button id="Button" style="color: white; background-color: black; border: 5px solid black; border-radius: 9px; position: relative; left: 889px; top: 9px; width: 100px;">Entel</button> -->
+        <!-- Terminaste Buscador -->
+
+
+
+
+
+        <!-- How TO - Side Navigation  -->
+
+
+
+        <div id="mySidenav" class="sidenav">
+            <span onclick="closeNav()" style="color: white; font-size: 50px; cursor: pointer;">&Chi;</span>
+            <a href="../html/AppDePeliculas.html">Inicio </a>
+            <a href="../Paginas/SobreMi.html">Sobre Mi</a>
+            <a href="../Paginas/Contacto.html">Contactarme </a>
+            <a href="../Paginas/Series.html">Series</a>
+            <a href="../Paginas/Animaciones.html">Animaciones</a>
+            <a href="../Paginas/Peliculas.html">Peliculas</a>
+        </div>
+
+
+        <span style="position: relative; font-size:30px;color: white; cursor:pointer; left: 1142px; top: -42px;"
+            onclick="openNav()">&#9776; </span>
+
+
+        <!-- Terminastes How TO - Side Navigation -->
+
+    </nav>
+    <div id="ResultadoS"></div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <article>
+
+        <!--Article No Sognifica Nada-->
+
+
+        <ul id="Resultado" class="RS">
+
+
+
+            <!-- Dice No Encontrado -->
+
+        </ul>
+
+
+
+
+
+
+    </article>
+
+    <button class="ScrollDos">
+        <a href="#ResultadoS" class="Scroll" id="Scroll">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill-rule="evenodd"
+                    d="M18.655 10.405a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06l4.97-4.97v14.44a.75.75 0 001.5 0V5.435l4.97 4.97a.75.75 0 001.06 0z">
+
+                </path>
+            </svg>
+
+        </a>
+    </button>
+
+
+
+
+  
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "1369px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+
+    <script>
+        const Peliculas = [{
+                Nombre: 'Lucifer',
+                Img: 'https://image.tmdb.org/t/p/w300/vkGnVBSNpayJ1oCfyVaMvhrim95.jpg',
+                Botton: '../Paginas/Articles.html'
+            },
+
+
+
+            {
+                Nombre: 'Super Dragon Ball Heroes',
+                Img: 'https://img.repelis.id/cover/super-dragon-ball-heroes.jpg',
+                Botton: '../Paginas/Artilulos.html'
+            },
+            {
+                Nombre: 'Dragon Ball Super ',
+                Img: 'https://img.repelis.id/cover/dragon-ball-super.png',
+                Botton: '../Paginas/AppDeInformacion.html'
+            },
+
+
+
+
+
+
+            {
+                Nombre: 'El Mundo Oculto de Sabrina  ',
+                Img: 'https://img.repelis.id/cover/el-mundo-oculto-de-sabrina.jpg',
+                Botton: '../Paginas/Apps_De_Informacion.html',
+                Botton: '../Paginas/AppDeInformacion.html'
+            },
+            {
+                Nombre: 'Sabrina, La Bruja Adolescente ',
+                Img: 'https://img.repelis.id/cover/sabrina-la-bruja-adolescente.jpg',
+                Botton: '../Paginas/AppDeInformacion.html'
+            },
+
+            {
+                Nombre: 'Los 100',
+                Img: 'https://img.repelis.id/cover/los-100.jpg',
+                Botton: '../Paginas/AppDeInformacion.html'
+            },
+
+
+
+
+        ];
+
+
+
+        const Formulario = document.querySelector('#Formulario');
+
+
+
+
+        const Resultado = document.querySelector('#Resultado');
+
+
+
+        const Filtrar = () => {
+
+
+            Resultado.innerHTML = '';
+
+            const Texto = Formulario.value.toLowerCase();
+            for (let Pelicula of Peliculas) {
+                let Nombre = Pelicula.Nombre.toLowerCase();
+
+                if (Nombre.indexOf(Texto) !== -1) {
+                    Resultado.innerHTML += `
+
+         
+          
+         
+       
+      
+       
+        <p class="Parrafos">                 
+        <img class='Imageness' src=${Pelicula.Img} alt="Peliculas">  
+        <br>
+        <br>    
+ 
+
+  
+           ${Pelicula.Nombre}
+
+      
+
+        <br>
+        <br>   
+
+           <a href=${Pelicula.Botton}>
+
+
+    
+
+             
+            <button class="Boton">Ver Informacion </button> 
+    
+  
+        <br>
+        <br>   
+
+        </a>
+
+       
+        <br>
+        <br>
+        </p>
+
+        
+         
+
+
+
+
+                   
+       
+                   
+            
+        `
+                };
+            };
+            if (Resultado.innerHTML === '') {
+                Resultado.innerHTML += `
+                 <h3 class="Series">Pelicula No Encontrado</h3>
+             `
+            };
+
+
+        };
+
+        Formulario.addEventListener('click', Filtrar);
+        Formulario.addEventListener('keyup', Filtrar);
+
+        Filtrar();
+    </script>
+    <script src="../js/Scrool.js"></script>
+
+</body>
+
+</html>

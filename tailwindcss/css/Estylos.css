@@ -1,0 +1,11 @@
+::selection{
+    background: #ee82ee;
+}
+
+p{  
+    color: white;
+    border-radius: 39px;
+    border: 2px solid #000;
+    padding: 10px;
+
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Slider</title>
+    <style>
+        .slide-contenedor {
+            width: 50%;
+            position: relative;
+        }
+
+
+
+        .miSlider img {
+            width: 100%;
+            max-height: 100vh;
+            height: inherit;
+            transition: 2s;
+        }
+
+        .direcciones {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 49px;
+        }
+
+        .direcciones a {
+            color: #fff;
+            display: inline-block;
+            padding: 20px;
+            text-decoration: none;
+        }
+
+        .direcciones a:hover {
+            background: rgba(0, 0, 0, .5);
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slide-contenedor">
+        <div class="miSlider">
+            <img src="https://cdn.pixabay.com/photo/2021/10/13/11/31/couple-6706278_960_720.jpg" alt="">
+        </div>
+        <div class="miSlider">
+            <img src="https://cdn.pixabay.com/photo/2021/10/28/20/20/hut-6750482_960_720.jpg" alt="">
+        </div>
+        <div class="miSlider">
+            <img src="https://cdn.pixabay.com/photo/2021/09/22/00/28/kitten-6645241_960_720.jpg" alt="">
+        </div>
+        <div class="direcciones">
+            <a href="#" class="atras" onclick="avanzaSlide(-1)">&#10094;</a>
+            <a href="#" class="adelante" onclick="avanzaSlide(1)">&#10095;</a>
+        </div>
+
+    </div>
+    <script>
+        let indice = 1;
+        muestraSlides(indice);
+
+        function avanzaSlide(n) {
+            muestraSlides(indice += n);
+        }
+
+        function posicionSlide(n) {
+            muestraSlides(indice = n);
+        }
+        setInterval(function tiempo() {
+            muestraSlides(indice += 1)
+        }, 4000);
+
+        function muestraSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName('miSlider');
+
+            if (n > slides.length) {
+                indice = 1;
+            }
+            if (n < 1) {
+                indice = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = 'none';
+            }
+
+            slides[indice - 1].style.display = 'block';
+
+
+        }
+    </script>
+</body>

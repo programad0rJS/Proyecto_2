@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Barra + Lateral</title>
+    <style>
+        #sidebar {
+            position: fixed;
+            left: -200px;
+            transition: all 500ms linear;
+            
+      
+           
+        }
+
+        #sidebar.active {
+            left: 0px;
+            
+        }
+
+        .toggle-btn {
+            position: absolute;
+            left: 230px;
+        }
+
+        .toggle-btn span {
+            font-size: 60px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="sidebar">
+        <div class="toggle-btn">
+            <span>&#9776;</span>
+        </div>
+        <ul>
+            <li style="list-style: none;">
+                <img src="https://lh3.googleusercontent.com/ogw/ADea4I7UgwMZ-ssuZF6WhZWRQie4n76nz_Rrxu5ZKw1c=s83-c-mo">
+
+            </li>
+        </ul>
+
+    </div>
+
+
+    <script>
+        const btnToggle = document.querySelector('.toggle-btn');
+
+        btnToggle.addEventListener('click', function () {
+            document.getElementById('sidebar').classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
